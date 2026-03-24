@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+
+:root {
+  --color-primary: #f0f;
+  --color-primary-dark: color-mix(in srgb, var(--color-primary) 70%, black);
+  --color-primary-darker: color-mix(in srgb, var(--color-primary) 20%, black);
+
+  --color-bg: #222;
+  --color-bg-image: #3a3a3a;
+  --color-bg-light: #333;
+  --color-bg-dark: #151515;
+  --color-bg-black: #111;
+
+  --color-border: #2a2a2a;
+  --color-border-light: #3a3a3a;
+
+  --color-text: #fff;
+  --color-text-dark: #bbb;
+}
+
+
+.shine-effect {
+  position: relative; /* обязательно для родителя, чтобы фон корректно отображался */
+  overflow: hidden;
+
+  /* основной фон */
+  background-color: var(--color-bg-black);
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    color-mix(in srgb, var(--color-primary) 35%, transparent),
+    transparent 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 200% 100%; /* делаем шире, чтобы был запас для анимации */
+
+  animation: shine-bg 15s ease-in-out infinite;
+}
+
+@keyframes shine-bg {
+  0% {
+    background-position: -100% 0; /* старт слева за пределами элемента */
+  }
+  50% {
+    background-position: 200% 0; /* середина — по всей ширине */
+  }
+  100% {
+    background-position: -100% 0; /* возвращаемся */
+  }
+}
+
+/* Убираем вертикальный скроллбар на всю страницу */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Chrome, Edge, Safari */
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+  width: 0; /* убираем вертикальный скроллбар */
+  background: transparent; /* на всякий случай */
+}
+
+body {
+  background-color: var(--color-bg-black);
+}
