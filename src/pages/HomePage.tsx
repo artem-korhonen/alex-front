@@ -26,14 +26,18 @@ function HomePage() {
 
     useEffect(() => {
         const loadHome = async () => {
-            const releases = await getAllReleases();
-            const playlists = await getAllPlaylists();
+            const [releasesResult, playlistsResult] = await Promise.allSettled([
+                getAllReleases(),
+                getAllPlaylists()
+            ]);
 
-            console.log(releases);
-            console.log(playlists);
+            if (releasesResult.status === "fulfilled") {
+                setReleaseFrames(releasesResult.value);
+            }
 
-            setReleaseFrames(releases);
-            setPlaylistFrames(playlists)
+            if (playlistsResult.status === "fulfilled") {
+                setPlaylistFrames(playlistsResult.value)
+            }
         }
 
         loadHome()
@@ -101,9 +105,17 @@ function HomePage() {
                     </div>
 
                     <div className="flex gap-3 overflow-x-auto pb-3">
-                        {releaseFrames.map((element) => (
-                            <ReleaseFrame id={element.id} name={element.name} cover={element.cover} type={element.type} artists={element.artists} />
-                        ))}
+                        {!releaseFrames.length ?
+                            (
+                                <div>
+                                    <h1 className="text-[var(--color-text)]">Loading...</h1>
+                                </div>
+                            ) : (
+                                releaseFrames.map((element) => (
+                                    <ReleaseFrame id={element.id} name={element.name} cover={element.cover} type={element.type} artists={element.artists} />
+                                ))
+                            )
+                        }
                     </div>
                 </div>
 
@@ -114,9 +126,17 @@ function HomePage() {
                     </div>
 
                     <div className="scroll-hide flex gap-3 overflow-x-auto pb-3">
-                        {playlistFrames.map((element) => (
-                            <PlaylistFrame id={element.id} name={element.name} cover={element.cover} count={element.count} />
-                        ))}
+                        {!playlistFrames.length ?
+                            (
+                                <div>
+                                    <h1 className="text-[var(--color-text)]">Loading...</h1>
+                                </div>
+                            ) : (
+                                playlistFrames.map((element) => (
+                                    <PlaylistFrame id={element.id} name={element.name} cover={element.cover} count={element.count} />
+                                ))
+                            )
+                        }
                     </div>
                 </div>
             </div>

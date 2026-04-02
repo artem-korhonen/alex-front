@@ -32,7 +32,7 @@ export async function getAllReleases(): Promise<ReleaseShort[]> {
         return response.data;
     } catch (error: any) {
         if (!error.response) {
-            return releaseFrames;
+            
         }
         throw error;
     }
