@@ -1,8 +1,8 @@
 import type { ArtistShort } from './Artist'
-import { type SongShort } from './Song'
+import { type SongShort2 } from './Song'
 
 type SongInRelease = {
-    song: SongShort,
+    song: SongShort2,
     position: number,
     disk: number | null
 }

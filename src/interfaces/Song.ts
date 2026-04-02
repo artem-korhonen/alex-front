@@ -17,3 +17,15 @@ export interface SongShort {
     className?: string,
     is_liked: boolean
 }
+
+
+export interface SongShort2 {
+    id: number,
+    name: string,
+    cover: string,
+    artists: string[],
+    className?: string,
+    is_liked: boolean,
+    position: number,
+    disk: number
+}
