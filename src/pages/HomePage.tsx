@@ -76,12 +76,7 @@ function HomePage() {
 
             <div className="flex items-center justify-center">
                 <div
-                    className="
-        shine-button w-[85%] rounded-4xl flex flex-col items-center justify-center gap-10 
-        h-[60vh] font-black cursor-pointer scale-98 transition-all duration-300 
-        hover:scale-100 shadow-[0_0_50px_var(--color-primary)]
-        hover:bg-[url('./assets/imeon.gif')] hover:bg-cover hover:bg-center
-        "
+                    className="shine-button w-[85%] rounded-4xl flex flex-col items-center justify-center gap-10 h-[60vh] font-black cursor-pointer scale-98 transition-all duration-300 hover:scale-100 shadow-[0_0_50px_var(--color-primary)] hover:bg-[url('./assets/imeon.gif')] hover:bg-cover hover:bg-center"
                 >
                     <Play
                         className="text-[var(--color-primary)] fill-[var(--color-primary)] drop-shadow-[0_0_20px_var(--color-primary)]"
