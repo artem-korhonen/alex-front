@@ -1,7 +1,7 @@
 import { Play } from "lucide-react";
-import type { SongLineProps } from "../interfaces/Song";
+import type { SongShort } from "../interfaces/Song";
 
-function MiniPlayer({ name, cover, artists, className }: SongLineProps) {
+function MiniPlayer({ name, cover, artists, className }: SongShort) {
     const artistsString = artists.join(", ")
     return (
         <div className={`${className} mx-8 h-20 px-4 bg-[var(--color-bg)] flex justify-between items-center rounded rounded-xl border border-[var(--color-primary)] shadow-[0_0_10px_var(--color-primary)] scale-100 cursor-pointer`}>
