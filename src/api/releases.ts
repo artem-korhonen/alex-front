@@ -4,12 +4,12 @@ import { releaseFrames, releases } from "./mockData";
 
 
 export async function getRelease(id: number): Promise<Release> {
-    const release = releases.find(r => r.id === id);
-    if (release) {
-        return release;
-    } else {
-        throw new Error("oao");
-    }
+    // const release = releases.find(r => r.id === id);
+    // if (release) {
+    //     return release;
+    // } else {
+    //     throw new Error("oao");
+    // }
 
     try {
         const response = await api.get<Release>(`/api/releases/${id}`);
@@ -25,7 +25,7 @@ export async function getRelease(id: number): Promise<Release> {
 
 
 export async function getAllReleases(): Promise<ReleaseShort[]> {
-    return releaseFrames;
+    // return releaseFrames;
     try {
         const response = await api.get<ReleaseShort[]>(`/api/releases`);
         if (!response.data || !response.data) throw new Error("Invalid data");
@@ -40,7 +40,7 @@ export async function getAllReleases(): Promise<ReleaseShort[]> {
 
 
 export async function getMyReleases(): Promise<ReleaseShort[]> {
-    return releaseFrames;
+    // return releaseFrames;
     try {
         const response = await api.get<ReleaseShort[]>(`/api/me/releases`);
         if (!response.data) throw new Error("Invalid data");

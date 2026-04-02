@@ -4,12 +4,12 @@ import { artists } from "./mockData";
 
 
 export async function getArtist(id: number) {
-    const artist = artists.find(a => a.id === id);
-    if (artist) {
-        return artist;
-    } else {
-        throw new Error("oao");
-    }
+    // const artist = artists.find(a => a.id === id);
+    // if (artist) {
+    //     return artist;
+    // } else {
+    //     throw new Error("oao");
+    // }
     try {
         const response = await api.get<Artist>(`/api/artists/${id}`);
         return response.data;
@@ -24,8 +24,8 @@ export async function getArtist(id: number) {
 
 
 export async function getMyArtists() {
-    const myArtists = artists.filter(a => a.is_liked == true);
-    return myArtists;
+    // const myArtists = artists.filter(a => a.is_liked == true);
+    // return myArtists;
     try {
         const response = await api.get<ArtistShort[]>('/api/me/artists');
         return response.data;
