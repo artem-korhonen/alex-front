@@ -17,3 +17,4 @@ export interface ArtistShort {
     name: string,
     cover: string
 }
+
