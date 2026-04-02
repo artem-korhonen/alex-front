@@ -11,16 +11,16 @@ export interface Release {
     id: number,
     name: string,
     cover: string,
-    releaseType: "single" | "ep" | "album",
+    type: "single" | "ep" | "album",
     artists: ArtistShort[],
     songs: SongInRelease[],
-    isLiked: boolean
+    is_liked: boolean
 }
 
 export interface ReleaseShort {
     id: number,
     name: string,
     cover: string,
-    releaseType: "single" | "ep" | "album",
+    type: "single" | "ep" | "album",
     artists: string[]
 }

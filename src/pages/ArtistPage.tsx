@@ -41,14 +41,14 @@ function ArtistPage() {
             </div>
 
             <div className="flex flex-col md:flex-row gap-5 text-[var(--color-text)] w-full">
-                <StartButtons id={artist.id} isLiked={artist.isLiked} songs={artist.songs} like={likeArtist}/>
+                <StartButtons id={artist.id} is_liked={artist.is_liked} songs={artist.songs} like={likeArtist}/>
             </div>
 
             <div className="my-4 flex flex-col gap-2">
                 <div className="flex flex-col gap-3 overflow-x-auto pb-3">
                     <h1 className="text-xl text-[var(--color-text)] font-bold">Популярные треки</h1>
                     {artist.songs?.map((song) => (
-                        <SongLine key={song.id} id={song.id} name={song.name} cover={song.cover} artists={song.artists} isLiked={song.isLiked} />
+                        <SongLine key={song.id} id={song.id} name={song.name} cover={song.cover} artists={song.artists} is_liked={song.is_liked} />
                     ))}
                 </div>
 
@@ -56,9 +56,9 @@ function ArtistPage() {
                     <h1 className="text-xl text-[var(--color-text)] font-bold">Синглы / EP</h1>
                     <div className="flex gap-2 overflow-x-auto pb-3">
                         {artist.releases?.map((release) => {
-                            if (release.releaseType !== "album") {
+                            if (release.type !== "album") {
                                 return (
-                                    <ReleaseFrame id={release.id} name={release.name} cover={release.cover} releaseType={release.releaseType} artists={release.artists} />
+                                    <ReleaseFrame id={release.id} name={release.name} cover={release.cover} type={release.type} artists={release.artists} />
                                 )
                             }
                         })}
@@ -69,9 +69,9 @@ function ArtistPage() {
                     <h1 className="text-xl text-[var(--color-text)] font-bold">Альбомы</h1>
                     <div className="flex gap-2 overflow-x-auto pb-3">
                         {artist.releases?.map((release) => {
-                            if (release.releaseType == "album") {
+                            if (release.type == "album") {
                                 return (
-                                    <ReleaseFrame id={release.id} name={release.name} cover={release.cover} releaseType={release.releaseType} artists={release.artists} />
+                                    <ReleaseFrame id={release.id} name={release.name} cover={release.cover} type={release.type} artists={release.artists} />
                                 )
                             }
                         })}

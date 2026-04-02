@@ -6,7 +6,7 @@ export interface Song {
     artists_ids: number[],
     artists: string[],
     listenings: string
-    isLiked: 1 | 0 | -1
+    is_liked: 1 | 0 | -1
 }
 
 export interface SongShort {
@@ -15,5 +15,5 @@ export interface SongShort {
     cover: string,
     artists: string[],
     className?: string,
-    isLiked: boolean
+    is_liked: boolean
 }

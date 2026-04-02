@@ -24,7 +24,7 @@ export async function getArtist(id: number) {
 
 
 export async function getMyArtists() {
-    const myArtists = artists.filter(a => a.isLiked == true);
+    const myArtists = artists.filter(a => a.is_liked == true);
     return myArtists;
     try {
         const response = await api.get<ArtistShort[]>('/api/me/artists');

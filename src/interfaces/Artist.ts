@@ -9,7 +9,7 @@ export interface Artist {
     releases: ReleaseShort[],
     songs: SongShort[],
     listeners: number,
-    isLiked: boolean
+    is_liked: boolean
 }
 
 export interface ArtistShort {

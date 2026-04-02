@@ -1,14 +1,16 @@
 import { type SongShort } from './Song'
 
+
 export interface Playlist {
     id: number,
     name: string,
     cover: string,
     description: string,
-    ownerName: string,
+    owner_name: string,
     songs: SongShort[],
-    isLiked: boolean
+    is_liked: boolean
 }
+
 
 export interface PlaylistShort {
     id: number,
@@ -21,7 +23,7 @@ export interface PlaylistShort {
 export interface MainPlaylistProps {
     id: number,
     name: string,
-    iconName: "like" | "dislike" | "history"
+    icon_name: "like" | "dislike" | "history"
 }
 
 
@@ -29,5 +31,6 @@ export interface PlaylistInfoProps {
     name: string
     cover: string
     description: string
-    ownerName: string
+    owner_name: string
 }
+

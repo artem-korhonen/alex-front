@@ -36,18 +36,18 @@ function PlaylistPage() {
                 </div>
                 <div className="flex flex-col gap-2 min-w-0">
                     <h1 className="text-4xl font-bold text-[var(--color-text)] truncate">{playlist.name}</h1>
-                    <span className="text-xl text-[var(--color-text-dark)] truncate">{playlist.ownerName}</span>
+                    <span className="text-xl text-[var(--color-text-dark)] truncate">{playlist.owner_name}</span>
                     <span className="my-3 text-xl text-[var(--color-text)] break-all">{playlist.description}</span>
                 </div>
             </div>
 
             <div>
-                <StartButtons id={playlist.id} isLiked={playlist.isLiked} songs={playlist.songs} like={likePlaylists}/>
+                <StartButtons id={playlist.id} is_liked={playlist.is_liked} songs={playlist.songs} like={likePlaylists}/>
             </div>
 
             <div className="flex flex-col gap-3">
                 {playlist.songs?.map((song) => (
-                    <SongLine key={song.id} id={song.id} name={song.name} cover={song.cover} artists={song.artists} isLiked={song.isLiked} />
+                    <SongLine key={song.id} id={song.id} name={song.name} cover={song.cover} artists={song.artists} is_liked={song.is_liked} />
                 ))}
             </div>
         </div>

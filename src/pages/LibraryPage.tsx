@@ -15,35 +15,35 @@ function LibraryPage() {
             name: "omg", 
             cover: "/", 
             artists: ["abc", "abcd", "abcdewwwwwwwwwwwwwwwwwwww"],
-            isLiked: true
+            is_liked: true
         },
         {
             id: 1, 
             name: "omg", 
             cover: "/", 
             artists: ["abc", "abcd", "abcdewwwwwwwwwwwwwwwwwwww"],
-            isLiked: true
+            is_liked: true
         },
         {
             id: 1, 
             name: "omg", 
             cover: "/", 
             artists: ["abc", "abcd", "abcdewwwwwwwwwwwwwwwwwwww"],
-            isLiked: true
+            is_liked: true
         },
         {
             id: 1, 
             name: "omg", 
             cover: "/", 
             artists: ["abc", "abcd", "abcdewwwwwwwwwwwwwwwwwwww"],
-            isLiked: true
+            is_liked: true
         },
         {
             id: 1, 
             name: "omg", 
             cover: "/", 
             artists: ["abc", "abcd", "abcde"],
-            isLiked: true
+            is_liked: true
         },
     ]
 
@@ -70,7 +70,7 @@ function LibraryPage() {
 
                 <div className="flex flex-col gap-1 m-2">
                     {lastTracks.map((element) => (
-                        <SongLine id={element.id} name={element.name} artists={element.artists} cover={element.cover} isLiked={element.isLiked} />
+                        <SongLine id={element.id} name={element.name} artists={element.artists} cover={element.cover} is_liked={element.is_liked} />
                     ))}
                 </div>
             </div>
@@ -95,7 +95,7 @@ function LibraryPage() {
                     <h2>Любимые исполнители</h2>
                 </div>
 
-                <MainPlaylistFrame id={1} name="Нелюбимые треки" iconName="dislike" />
+                <MainPlaylistFrame id={1} name="Нелюбимые треки" icon_name="dislike" />
             </div>
         </div>
     )
