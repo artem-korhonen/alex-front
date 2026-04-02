@@ -11,7 +11,7 @@ export interface Release {
     cover: string,
     type: "single" | "ep" | "album",
     artists: ArtistShort[],
-    songs: SongInRelease[],
+    songs: SongShort2[],
     is_liked: boolean
 }
 
