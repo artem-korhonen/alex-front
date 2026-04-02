@@ -3,8 +3,6 @@ import { type SongShort2 } from './Song'
 
 type SongInRelease = {
     song: SongShort2,
-    position: number,
-    disk: number | null
 }
 
 export interface Release {
