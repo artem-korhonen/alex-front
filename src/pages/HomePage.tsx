@@ -90,8 +90,8 @@ function HomePage() {
             </div>
 
             <div className="flex gap-3 h-30">
-                <MainPlaylistFrame id={1} name={"Любимое"} iconName={"like"} />
-                <MainPlaylistFrame id={1} name={"История"} iconName={"history"} />
+                <MainPlaylistFrame id={1} name={"Любимое"} icon_name={"like"} />
+                <MainPlaylistFrame id={1} name={"История"} icon_name={"history"} />
             </div>
 
             <div className="flex flex-col gap-3">
@@ -102,7 +102,7 @@ function HomePage() {
 
                     <div className="flex gap-3 overflow-x-auto pb-3">
                         {releaseFrames.map((element) => (
-                            <ReleaseFrame id={element.id} name={element.name} cover={element.cover} releaseType={element.releaseType} artists={element.artists} />
+                            <ReleaseFrame id={element.id} name={element.name} cover={element.cover} type={element.type} artists={element.artists} />
                         ))}
                     </div>
                 </div>
