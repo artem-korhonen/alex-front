@@ -25,7 +25,7 @@ function App() {
                 </Routes>
 
                 <div className="fixed w-full left-0 bottom-0 flex flex-col gap-2">
-                    <MiniPlayer id={1} name={"omg"} cover={"/"} artists={["abc", "abcd", "abcdewwwwwwwwwwwwwwwwwwww"]} />
+                    <MiniPlayer id={1} name={"omg"} cover={"/"} artists={["abc", "abcd", "abcdewwwwwwwwwwwwwwwwwwww"]} is_liked={true} />
                     <NavBar />
                 </div>
             </div>

@@ -54,7 +54,7 @@ function ReleasePage() {
             </div>
 
             <div>
-                <StartButtons id={release.id} isLiked={release.isLiked} songs={release.songs?.map(s => s.song)} like={likeRelease} />
+                <StartButtons id={release.id} is_liked={release.is_liked} songs={release.songs?.map(s => s.song)} like={likeRelease} />
             </div>
 
             <div className="flex flex-col gap-3">
@@ -69,7 +69,7 @@ function ReleasePage() {
 
                         return a.position - b.position;
                     }).map((songInRelease) => (
-                        <SongLine key={songInRelease.song.id} id={songInRelease.song.id} name={songInRelease.song.name} cover={songInRelease.song.cover} artists={songInRelease.song.artists} isLiked={songInRelease.song.isLiked} />
+                        <SongLine key={songInRelease.song.id} id={songInRelease.song.id} name={songInRelease.song.name} cover={songInRelease.song.cover} artists={songInRelease.song.artists} is_liked={songInRelease.song.is_liked} />
                     ))
                 }
             </div>
