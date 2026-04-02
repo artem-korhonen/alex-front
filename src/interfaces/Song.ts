@@ -25,7 +25,5 @@ export interface SongShort2 {
     cover: string,
     artists: string[],
     className?: string,
-    is_liked: boolean,
-    position: number,
-    disk: number
+    is_liked: boolean
 }

@@ -1,8 +1,10 @@
 import type { ArtistShort } from './Artist'
-import { type SongShort2 } from './Song'
+import { type SongShort } from './Song'
 
 type SongInRelease = {
-    song: SongShort2,
+    song: SongShort,
+    position: number,
+    disk: number | null
 }
 
 export interface Release {
@@ -11,7 +13,7 @@ export interface Release {
     cover: string,
     type: "single" | "ep" | "album",
     artists: ArtistShort[],
-    songs: SongShort2[],
+    songs: SongInRelease[],
     is_liked: boolean
 }
 
