@@ -9,14 +9,14 @@ interface LoginPageProps {
 function LoginPage({ setIsAuth }: LoginPageProps) {
     const navigate = useNavigate();
 
-    const [name, setName] = useState<string>();
+    const [username, setUsername] = useState<string>();
     const [email, setEmail] = useState<string>();
     const [password, setPassword] = useState<string>();
 
     const onLoginClick = async () => {
         if (name && email && password) {
             try {
-                const response = await login({ name, email, password });
+                const response = await login({ username, email, password });
             } catch (error: any) {
                 console.error("Ошибка входа:", error);
             } finally {
@@ -37,7 +37,7 @@ function LoginPage({ setIsAuth }: LoginPageProps) {
                         <input
                             type="text"
                             value={name}
-                            onChange={(e) => setName(e.target.value)}
+                            onChange={(e) => setUsername(e.target.value)}
                             placeholder="Введите имя"
                             className="h-12 w-full px-4 border border-[var(--color-primary)] rounded-xl bg-[var(--color-bg-black)] text-[var(--color-text)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
                         />
